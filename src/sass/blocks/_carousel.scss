@@ -2,12 +2,12 @@
     padding: 81px 0;
     &__inner {
         position: relative;
-        width: 750px;
+        max-width: 750px;
         margin: 0 auto;
     }
 
     // [data-controls=prev]
-    .prev {
+    .slick-prev {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -19,7 +19,7 @@
             height: 50px;
         }
     }
-    .next {
+    .slick-next {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -31,12 +31,12 @@
             height: 50px;
         }
     }
-    .tns-item {
-        img {
-            display: block;
-            margin: 0 auto;
-        }
-    }
+    // .tns-item {
+    //     img {
+    //         display: block;
+    //         margin: 0 auto;
+    //     }
+    // }
 
     // .tns-nav {
     //     button {

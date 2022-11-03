@@ -42,6 +42,11 @@ gulp.task('icon', function() {
         .pipe(gulp.dest("dist/icon"));
 });
 
+gulp.task('mailer', function() {
+  return gulp.src("src/mailer/**/*.+(php)")
+      .pipe(gulp.dest("dist/mailer"));
+});
+
 function reload(done) {
   server.reload();
   done();
@@ -59,4 +64,4 @@ function serve(done) {
 
 const watch = () => gulp.watch('src/**.*', gulp.series('sass', reload));
 
-gulp.task('dev', gulp.series('html', 'img', 'js', 'icon', 'js', 'fonts', 'sass', serve));
+gulp.task('dev', gulp.series('html', 'img', 'js', 'icon', 'js', 'fonts', 'mailer', 'sass', serve));
