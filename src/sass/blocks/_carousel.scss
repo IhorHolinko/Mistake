@@ -1,12 +1,13 @@
 .carousel {
     padding: 81px 0;
+    overflow: hidden;
     &__inner {
         position: relative;
         max-width: 750px;
         margin: 0 auto;
     }
 
-    // [data-controls=prev]
+    /* [data-controls=prev] */
     .slick-prev {
         position: absolute;
         top: 50%;
@@ -31,19 +32,19 @@
             height: 50px;
         }
     }
-    // .tns-item {
-    //     img {
-    //         display: block;
-    //         margin: 0 auto;
-    //     }
-    // }
+    /*.tns-item {
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
 
-    // .tns-nav {
-    //     button {
-    //         background-color: red;
-    //     }
-    //     .tns-nav-active {
-    //         background-color: black;
-    //     }
-    // }
+    .tns-nav {
+        button {
+            background-color: red;
+        }
+        .tns-nav-active {
+            background-color: black;
+        }
+    } */
 }
