@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pulse</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
-    </link>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"></link> -->
     <link rel="stylesheet" href="css/stylesheet.css">
     </link>
     <link rel="stylesheet" href="css/style.min.css">
@@ -96,17 +95,36 @@
         </div>
     </div>
 
-    <div class="carousel">
-        <div class="container">
-            <div class="carousel__inner">
-                <div><img src="img/photo1.svg" alt="slide"></div>
-                <div><img src="img/photo2.svg" alt="slide"></div>
-                <div><img src="img/photo3.svg" alt="slide"></div>
+    <div class="slider">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="img/photo1.svg">
             </div>
-            <!-- <button type="button" class="prev"><img src="img/left.svg"></button>
-            <button type="button" class="next"><img src="img/right.svg"></button> -->
+
+            <div class="mySlides fade">
+                <img src="img/photo2.svg">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="img/photo3.svg">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </div>
+
+
+
 
     <section class="catalog">
         <div class="container">
@@ -465,7 +483,7 @@
             width="100%" height="630" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="footer__info">
-            <adress class="footer__addr">Москва, Мясницкий проезд, д.3с1</adress>
+            <adress class="footer__addr">Москва, <br> Мясницкий проезд, д.3с1</adress>
             <a class="footer__phone" href="tel:84999228974">8 (499) 922-89-74</a>
             <div class="footer__social">
                 <a href="#" class="footer__social-item"> <img src="../icon/facebook.svg" alt="facebook"></a>
@@ -520,12 +538,18 @@
 
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script> -->
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/jquery.maskedinput.min.js"></script>
-    <script src="js/wow.min.js"></script>
+    <!-- <script src="js/slick.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
+        integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"
+        integrity="sha512-d4KkQohk+HswGs6A1d6Gak6Bb9rMWtxjOa0IiY49Q3TeFd5xAzjWXDCBW9RS7m86FQ4RzM2BdHmdJnnKRYknxw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+        integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
+
 </body>
 
 </html>

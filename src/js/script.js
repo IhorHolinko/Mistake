@@ -1,30 +1,4 @@
-$(document).ready(function (){
-    $('.carousel__inner').slick({
-        speed: 1200,
-        adaptiveHeight: true,
-        prevArrow: '<button type="button" class="slick-prev"><img src="img/left.svg"></button>', 
-        nextArrow: '<button type="button" class="slick-next"><img src="img/right.svg"></button>', 
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    dots: true,
-                    arrows: false
-                }
-            }
-        ]
-    });
-
-        // I try to make carousel good
-    // $('.carousel__inner').slick({
-    //         dots: true,
-    //         infinite: true,
-    //         speed: 300,
-    //         slidesToShow: 1,
-    //         adaptiveHeight: true,
-    //         prevArrow: '<button type="button" class="slick-prev"><img src="img/left.svg"></button>',
-    //         nextArrow: '<button type="button" class="slick-next"><img src="img/right.svg"></button>',
-    // });
+$(document).ready(function () {
 
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function () {
         $(this)
@@ -33,8 +7,8 @@ $(document).ready(function (){
     });
 
     function toggleSlide(item) {
-        $(item).each(function(i) {
-            $(this).on('click', function(e) {
+        $(item).each(function (i) {
+            $(this).on('click', function (e) {
                 e.preventDefault();
                 $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
                 $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
@@ -46,12 +20,12 @@ $(document).ready(function (){
     toggleSlide('.catalog-item__back');
 
     // Modal
-    $('[data-modal=consultation]').on('click', function() {
+    $('[data-modal=consultation]').on('click', function () {
         $('.overlay, #consultation').show();
         $('.overlay, #consultation').fadeIn('slow');
     });
 
-    $('.modal__close').on('click', function() {
+    $('.modal__close').on('click', function () {
         $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
     });
 
@@ -59,8 +33,8 @@ $(document).ready(function (){
     //     $('.overlay, #order').fadeIn('slow');
     // });
 
-    $('button_mini').each(function(i) {
-        $(this).on('click', function() {
+    $('button_mini').each(function (i) {
+        $(this).on('click', function () {
             $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
             $('.overlay, #order').fadeIn('slow');
         });
@@ -130,10 +104,37 @@ $(document).ready(function (){
     });
 
     // Pageup
-    $("a[href=#up]").click(function(){
+    $("a[href=#up]").click(function () {
         const _href = $(this).attr("href");
-        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+        $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
         return false;
     });
 
 });
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
